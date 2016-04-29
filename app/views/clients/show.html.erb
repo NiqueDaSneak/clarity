@@ -1,0 +1,14 @@
+<%= link_to image_tag("back.png", :class => "back-button"), coach_path(@client.coach.id) %>
+<div class="center-name-client">
+  <span class="center-name-client"> <%= @client.full_name %>'s Goals </span>
+</div>
+<a href= "<%= new_goal_path( :'data-client-id' => @client.id ) %>">
+             <%= image_tag("plus.png", class: 'add-goal') %>
+</a>
+
+<% @client.goals.each do |goal| %>
+<div class="goal">
+  <span> <%= goal.statement %> </span>
+   
+</div>
+<% end %>

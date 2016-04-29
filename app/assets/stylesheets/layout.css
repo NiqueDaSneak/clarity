@@ -1,0 +1,19 @@
+html, body {
+	/*height: 100%;*/
+	margin: 0px;
+	font-family: 'Montserrat', sans-serif;
+	/*Primary Blue #0062B3*/
+	/*Secondary Blue: #003663*/
+}
+
+body {
+	background-image: url("clarity-bg-mobile.png");
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover; 
+}
+
+.header-logo {
+	height: 40px;
+	padding: 5px;
+}

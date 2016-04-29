@@ -1,0 +1,56 @@
+    <nav id="menu">
+      <header class="menu-header">
+        <p>Menu</p>
+      </header>
+      <div class="menu-buttons-container">
+        <div class="menu-button">
+          <a class="menu-link-text" href="<%= new_client_path %>">
+          <%= image_tag("add_link.png", class: 'menu-img') %>
+            <p>Add Client</p>
+          </a>
+        </div>
+        <div class="menu-button">
+          <a class="menu-link-text" href="<%= logout_path %>">
+              <%= image_tag("logout_link.png", class: 'menu-img') %>
+            <p>Log Out</p>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <section id="panel">
+                  <%= image_tag("menu.png", class: 'toggle-button') %>
+        <div class="center-name-coach">
+        <p class="coach-name"> <%= @coach.full_name %></p>
+  </div>
+
+      <% @coach.clients.each do |client| %>
+      <a class="client-link-a" href="<%= client_path(client) %>">
+        <div class="client-link">
+          <%= client.full_name %>
+             <%= image_tag("double-chevron.png", class: 'double-chevron') %>
+        </div>
+      </a>
+      <% end %>
+    </section>
+
+  <script type="text/javascript">
+    
+<!-- JS for slideout menu function -->
+
+var slideout = new Slideout({
+  'panel': document.getElementById('panel'),
+  'menu': document.getElementById('menu'),
+  'padding': 150,
+  'tolerance': 70
+});
+
+      // Toggle button
+      document.querySelector('.toggle-button').addEventListener('click', function() {
+        slideout.toggle();
+      });
+      
+      <!-- end of slideout function -->
+  </script>
+
+
